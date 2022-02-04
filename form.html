@@ -108,6 +108,10 @@
       </div>
       
       <small class="ps-4 text-muted d-none d-sm-block">Sua senha deverá ter ao menos 8 caracteres, 1 número e 1 letra.</small>
+
+      <div id="errorMessage" class="alert alert-danger" hidden>
+        Aconteceu algo de errado!
+      </div>
       
       <div class="form-floating mb-3 mt-3">
         <input
@@ -124,6 +128,22 @@
 
       <button type="submit" class="p-3 px-5 w-auto btn btn-primary m-auto">Criar conta</button>
     </form>
+
+    <table id="tableUsers" class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Telefone</th>
+          <th scope="col">Nascimento</th>
+          <th scope="col">Email</th>
+          <th scope="col">CPF</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+      </tbody>
+    </table>
   </div>
 </body>
 </html>
@@ -133,3 +153,4 @@
   integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
   crossorigin="anonymous"
 ></script>
+<script src="index.js"></script>
