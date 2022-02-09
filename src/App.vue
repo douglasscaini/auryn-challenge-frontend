@@ -22,11 +22,7 @@
 
   <div class="container my-4 col-lg-6 col-xl-4">
     <div class="d-flex justify-content-center">
-      <img
-        src="https://memorar.fot.br/images/company/memorar.fot.br.png"
-        alt="Logo Loja Memorar"
-        width="200px"
-      />
+      <img src="./assets/logo.png" alt="Logo Loja Memorar" />
     </div>
     <h1 class="text-center h5 fw-bold mt-1 mb-3">Crie sua conta na Memorar</h1>
 
@@ -167,6 +163,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "App",
   components: {},
@@ -185,12 +183,33 @@ export default {
         this.errorMessage = "As senhas não são iguais, por favor verifique!";
       } else {
         this.showErrorMessage = false;
-        this.users.push({
-          id: this.users.length + 1,
-          ...this.userForm,
+
+        // this.users.push({
+        //   id: this.users.length + 1,
+        //   ...this.userForm,
+        // });
+
+        const data = new URLSearchParams();
+
+        for (const [key, value] of Object.entries(this.userForm)) {
+          data.append(key, value);
+        }
+
+        axios.post("http://localhost:9090/users", data).then(() => {
+          this.getUsers();
         });
       }
     },
+
+    getUsers: function () {
+      axios.get("http://localhost:9090/users").then((response) => {
+        this.users = response.data;
+      });
+    },
+  },
+
+  mounted: function () {
+    this.getUsers();
   },
 };
 </script>
