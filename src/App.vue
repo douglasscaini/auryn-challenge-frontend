@@ -184,15 +184,11 @@ export default {
       } else {
         this.showErrorMessage = false;
 
-        // this.users.push({
-        //   id: this.users.length + 1,
-        //   ...this.userForm,
-        // });
-
         const data = new URLSearchParams();
 
         for (const [key, value] of Object.entries(this.userForm)) {
           data.append(key, value);
+          this.userForm[key] = "";
         }
 
         axios.post("http://localhost:9090/users", data).then(() => {
