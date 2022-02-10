@@ -1,6 +1,6 @@
 <h1 align="center"><img src="./.github/memorar.png" width="200px"/></h1>
 
-<h3 align="center">Formulário Memorar</h3>
+<h3 align="center">Front-end Formulário Memorar</h3>
 
 <p align="center">“Software developers are students forever 🧠”</p>
 
@@ -29,7 +29,7 @@
 
 ```bash
 # Configurar o back-end disponível abaixo:
-$ ...
+$ https://github.com/douglasscaini/auryn-challenge-backend
 
 # Instalar as dependências necessárias:
 $ yarn ou npm install
