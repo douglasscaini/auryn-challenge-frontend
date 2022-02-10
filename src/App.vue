@@ -136,7 +136,7 @@
       <button type="submit" class="p-3 px-5 w-auto btn btn-primary m-auto">Criar conta</button>
     </form>
 
-    <table id="tableUsers" class="table table-striped">
+    <table id="tableUsers" class="mt-5 table table-striped">
       <thead>
         <tr>
           <th scope="col">ID</th>
@@ -153,7 +153,7 @@
           <th scope="row">{{ user.id }}</th>
           <td>{{ user.name }}</td>
           <td>{{ user.phoneNumber }}</td>
-          <td>{{ user.birthday }}</td>
+          <td>{{ new Date(user.birthday).toLocaleString("pt-BR", { dateStyle: "short" }) }}</td>
           <td>{{ user.email }}</td>
           <td>{{ user.cpf }}</td>
         </tr>
